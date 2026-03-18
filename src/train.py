@@ -22,7 +22,7 @@ TOTAL_TIMESTEPS = 150_000
 BASE_DIR        = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL_SAVE_PATH = os.path.join(BASE_DIR, "dqn_model")
 LOG_DIR         = os.path.join(BASE_DIR, "results")
-TENSORBOARD_LOG = os.path.join(BASE_DIR, "tensorboard_logs")
+TENSORBOARD_LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "tensorboard_logs")
 
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(TENSORBOARD_LOG, exist_ok=True)
