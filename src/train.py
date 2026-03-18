@@ -19,9 +19,10 @@ ENV_ID          = "ALE/Breakout-v5"
 N_ENVS          = 1                 
 FRAME_STACK     = 4                   
 TOTAL_TIMESTEPS = 150_000            
-MODEL_SAVE_PATH = "dqn_model"         
-LOG_DIR         = "results"
-TENSORBOARD_LOG = "tensorboard_logs"
+BASE_DIR        = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_SAVE_PATH = os.path.join(BASE_DIR, "dqn_model")
+LOG_DIR         = os.path.join(BASE_DIR, "results")
+TENSORBOARD_LOG = os.path.join(BASE_DIR, "tensorboard_logs")
 
 os.makedirs(LOG_DIR, exist_ok=True)
 os.makedirs(TENSORBOARD_LOG, exist_ok=True)
