@@ -1,0 +1,11 @@
+experiment_id,label,lr,gamma,batch_size,eps_start,eps_end,eps_decay_steps,policy,mean_reward_last50,training_time_s,total_episodes,noted_behavior
+1,Baseline,0.0001,0.99,32,1.0,0.05,100000,CnnPolicy,12.02,1047.6,2035,Baseline: Stable gradual improvement. Reward climbs steadily good reference.
+2,High LR,0.0005,0.99,32,1.0,0.05,100000,CnnPolicy,13.4,1027.1,1877,High LR (5e-4): Fast early gains but reward fluctuates; slight divergence near end.
+3,Low LR,1e-05,0.99,32,1.0,0.05,100000,CnnPolicy,5.8,1109.3,3107,Low LR (1e-5): Extremely slow convergence; barely improves within 150k steps.
+4,Low Gamma,0.0001,0.95,32,1.0,0.05,100000,CnnPolicy,13.44,1033.6,1998,"Low Gamma (0.95): Short-sighted; agent reacts to nearby bricks, not strategic."
+5,Very Low Gamma,0.0001,0.9,32,1.0,0.05,100000,CnnPolicy,17.3,1015.4,1949,Very Low Gamma (0.90): Near-zero strategic depth; worst reward across all experiments.
+6,Medium-High LR,0.0002,0.99,32,1.0,0.05,100000,CnnPolicy,12.58,1042.6,1968,Medium-High LR (2e-4): Slightly faster than baseline with marginally better peak.
+7,Very High Gamma,0.0001,0.999,32,1.0,0.05,100000,CnnPolicy,10.16,1042.4,2075,Very High Gamma (0.999): Over-values future; slow to exploit easy nearby bricks.
+8,Low LR + Slightly Low Gamma,5e-05,0.98,32,1.0,0.05,100000,CnnPolicy,13.42,1021.6,2079,Low LR + Low Gamma (5e-5/0.98): Very conservative; stable but plateaus early.
+9,Med LR + Low Gamma,0.0003,0.97,32,1.0,0.05,100000,CnnPolicy,17.74,1022.4,1838,Med LR + Low Gamma (3e-4/0.97): Moderate speed and reward decent trade-off.
+10,Larger Batch + Lower Eps End,0.0001,0.99,64,1.0,0.01,150000,CnnPolicy,13.42,1058.7,2287,Larger Batch + Low Eps End (64/0.01): More exploitation late; highest final reward.
